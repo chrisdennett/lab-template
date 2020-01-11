@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 const DisplayCanvas = ({ sizeInfo }) => {
   const [sourceImg, setSourceImg] = useState(null);
@@ -30,9 +31,11 @@ const DisplayCanvas = ({ sizeInfo }) => {
   }, [sourceImg, sizeInfo]);
 
   return (
-    <div style={{ position: "absolute", left: canvasX, top: canvasY }}>
-      <canvas ref={canvasRef} style={{ padding: 0, margin: 0 }} />
-    </div>
+    <Container>
+      <CanvasHolder left={canvasX} top={canvasY}>
+        <canvas ref={canvasRef} />
+      </CanvasHolder>
+    </Container>
   );
 };
 
@@ -71,3 +74,17 @@ const drawCanvas = (source, targetCanvas, maxTargetWidth, maxTargetHeight) => {
   // return the output width and height so it can be used to position canvas
   return { w, h };
 };
+
+const CanvasHolder = styled.div`
+  position: absolute;
+  left: ${props => props.left}px;
+  top: ${props => props.top}px;
+  line-height: 0;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+`;
+
+const Container = styled.div`
+  background: yellow;
+  width: 100%;
+  height: 100%;
+`;
