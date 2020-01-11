@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import * as Space from "react-spaces";
+//
+import TopBar from "./top-bar/TopBar";
+import DisplayCanvas from "./main/DisplayCanvas";
+import Controls from "./controls/Controls";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Space.ViewPort>
+      <Space.Top size={60}>
+        <TopBar />
+      </Space.Top>
+      <Space.Fill trackSize={true}>
+        <Space.Info>
+          {sizeInfo => <DisplayCanvas sizeInfo={sizeInfo} />}
+        </Space.Info>
+      </Space.Fill>
+      <Space.BottomResizable size={100}>
+        <Controls />
+      </Space.BottomResizable>
+    </Space.ViewPort>
   );
 }
 
