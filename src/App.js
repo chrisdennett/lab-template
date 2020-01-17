@@ -9,7 +9,7 @@ function App() {
   return (
     <Space.ViewPort>
       <Space.Top size={60}>
-        <TopBar />
+        <TopBar title={"TEMPLATE"} infoUrl={"https://artfly.io/binary-hands"} />
       </Space.Top>
       <Space.Fill trackSize={true}>
         <Space.Info>
