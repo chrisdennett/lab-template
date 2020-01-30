@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const DisplayCanvas = ({ sizeInfo }) => {
+const Display = ({ sizeInfo }) => {
   const [sourceImg, setSourceImg] = useState(null);
   const [canvasX, setCanvasX] = useState(0);
   const [canvasY, setCanvasY] = useState(0);
@@ -39,7 +39,7 @@ const DisplayCanvas = ({ sizeInfo }) => {
   );
 };
 
-export default DisplayCanvas;
+export default Display;
 
 const drawCanvas = (source, targetCanvas, maxTargetWidth, maxTargetHeight) => {
   const ctx = targetCanvas.getContext("2d");
