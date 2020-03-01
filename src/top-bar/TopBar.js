@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ExternalLink from "../components/externalLink";
-import { FaInfoCircle } from "react-icons/fa";
+//FaInfoCircle
+import { FaInfoCircle, FaBars } from "react-icons/fa";
 import { GoLinkExternal } from "react-icons/go";
 
 const TopBar = ({
@@ -14,8 +15,15 @@ const TopBar = ({
   return (
     <Container>
       <StyledButton onClick={() => setOptionsVisible(!optionsVisible)}>
-        {optionsVisible ? "Hide" : "Show"} Options
+        <FaBars
+          style={{ fontSize: 24 }}
+          onClick={() => setOptionsVisible(!optionsVisible)}
+        />
       </StyledButton>
+
+      {/* <StyledButton onClick={() => setOptionsVisible(!optionsVisible)}>
+        {optionsVisible ? "Hide" : "Show"} Options
+      </StyledButton> */}
       <Title>{title}</Title>
       <HelpInfoLink to={infoUrl}>
         <FaInfoCircle style={{ position: "relative", top: 4, fontSize: 20 }} />{" "}
@@ -40,7 +48,6 @@ const HelpInfoLink = styled(ExternalLink)`
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
-  margin-right: 5px;
 
   svg {
     fill: white;
@@ -52,7 +59,7 @@ const HelpInfoLink = styled(ExternalLink)`
 `;
 
 const Container = styled.div`
-  background: black;
+  background: none;
   color: white;
   display: flex;
   align-items: center;
@@ -67,16 +74,11 @@ const Title = styled.h1`
 `;
 
 const StyledButton = styled.button`
-  padding: 7px 10px;
-  font-weight: bold;
-  border-radius: 5px;
+  padding: 10px;
   border: none;
-  margin-right: 15px;
-  /* border: 2px solid white; */
-  font-size: 16px;
-  /* background: black; */
-  /* color: white; */
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
   user-select: none;
-  margin-left: 10px;
 `;

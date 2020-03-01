@@ -75,6 +75,20 @@ const drawCanvas = (source, targetCanvas, maxTargetWidth, maxTargetHeight) => {
   return { w, h };
 };
 
+// STYLES
+const Container = styled.div`
+  background: #fff;
+  border-radius: 10px;
+  background-image: url(./img/cutting-mat-tile.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  /* border-bottom: 2px solid rgba(0, 0, 0, 1); */
+  /* box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.7); */
+`;
+
 const CanvasHolder = styled.div`
   position: absolute;
   left: ${props => props.left}px;
@@ -83,8 +97,8 @@ const CanvasHolder = styled.div`
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 `;
 
-const Container = styled.div`
-  background: yellow;
-  width: 100%;
-  height: 100%;
-`;
+// const Container = styled.div`
+//   background: yellow;
+//   width: 100%;
+//   height: 100%;
+// `;
